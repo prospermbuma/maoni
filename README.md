@@ -1,2 +1,0 @@
-# Maoni
-SANDUKU LA MAONI
