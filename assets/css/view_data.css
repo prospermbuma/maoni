@@ -1,0 +1,252 @@
+/* ====================================================
+# General
+=====================================================*/
+
+@keyframes LED {
+    0% {
+        color: rgba(7, 103, 213, 0.7);
+    }
+    25% {
+        color: rgba(213, 12, 216, 0.7);
+    }
+    50% {
+        color: rgba(4, 134, 134, 0.7);
+    }
+    75% {
+        color: rgba(234, 13, 138, 0.83);
+    }
+    10% {
+        color: rgba(7, 103, 213, 0.7);
+    }
+}
+
+.fa-smile {
+    font-size: 20px;
+    color: rgba(7, 103, 213, 0.7);
+    animation: LED 20s infinite forwards ease-in-out;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .3rem;
+}
+
+
+/* ====================================================
+# Navigation
+=====================================================*/
+
+.navbar .nav-right-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .nav-right-content a {
+    text-decoration: none;
+    color: #575252;
+    transition: all .3s;
+}
+
+.navbar .nav-right-content a:hover {
+    color: #000;
+}
+
+.navbar #checkbtn {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar #checkbtn:hover {
+    cursor: pointer;
+}
+
+.navbar #checkbtn .fa-bars {
+    font-size: 22px;
+    border: 1px solid #13256d;
+    padding: 7px 12px;
+    border-radius: 5px;
+    color: #13256d;
+}
+
+.navbar #check {
+    display: none;
+}
+
+
+/* === Media Query === */
+
+@media only screen and (max-width: 1060px) {
+    .container.commento {
+        padding: 0 120px;
+    }
+    .row {
+        gap: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 986px) {
+    .navbar {
+        justify-content: space-between;
+        gap: 0rem;
+    }
+    .navbar .nav-right-content {
+        display: none;
+    }
+    .navbar #checkbtn {
+        display: block;
+    }
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #f8f9fa;
+        width: 100%;
+        height: 100%;
+        padding: 80px 60px 100px 60px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        gap: 1.0rem;
+        transition: all .5s;
+        z-index: 1030;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+    .navbar #check:checked~.navbar-nav {
+        right: 0;
+    }
+}
+
+
+/* ====================================================
+# View
+=====================================================*/
+
+#view .lead {
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+#view .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#view table {
+    border-collapse: collapse;
+    width: 100%;
+    white-space: nowrap;
+    table-layout: auto;
+}
+
+#view table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+#view table tr:hover {
+    background-color: #e3e3e3;
+}
+
+#view table th {
+    padding: 10px 10px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    border-top: 2px solid #13256d;
+    border-bottom: 2px solid #13256d;
+}
+
+#view table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+#view .records-total {
+    margin-top: 30px;
+    text-align: center;
+    font-size: large;
+}
+
+#view .prev-next-btns {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#view .prev-next-btns .btn {
+    text-decoration: none;
+    padding: 9px 24px;
+    background: #13256d;
+    border-radius: 5px;
+    color: #fff;
+    transition: all .3s;
+    border: 2px solid #13256d;
+}
+
+#view .prev-next-btns .btn-prev {
+    background: none;
+    color: #13256d;
+}
+
+#view .prev-next-btns .btn-prev:hover {
+    background: #13256d;
+    color: #fff;
+}
+
+#view .prev-next-btns .btn-next:hover {
+    border-color: #1f3aa3;
+    background: #1f3aa3;
+    color: #fff;
+}
+
+#view .text {
+    margin-top: 40px;
+}
+
+#view .text .para {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/* === Media Query === */
+
+@media only screen and (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        padding: 0 30px;
+    }
+    .para {
+        text-align: center;
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .container {
+        padding: 0 20px;
+    }
+    #view .prev-next-btns .btn {
+        padding: 9px 24px;
+        font-size: 12px;
+    }
+}
+
+
+/* === End Query === */

@@ -1,0 +1,573 @@
+                                                                                                                                /* ====================================================
+# General
+=====================================================*/
+                                                                                                                                
+                                                                                                                                * {
+                                                                                                                                    margin: 0;
+                                                                                                                                    padding: 0;
+                                                                                                                                    box-sizing: border-box;
+                                                                                                                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                body {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: center;
+                                                                                                                                    height: 100vh;
+                                                                                                                                    /* background: #5372F0; */
+                                                                                                                                    background: #002240;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    body {
+                                                                                                                                        display: flex;
+                                                                                                                                        justify-content: center;
+                                                                                                                                        align-items: center;
+                                                                                                                                        height: 55vh;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* Custom properties */
+                                                                                                                                
+                                                                                                                                 :root {
+                                                                                                                                    --primary-color: #244f88;
+                                                                                                                                    --secondary-color: #002240;
+                                                                                                                                    --dark-color: #343434;
+                                                                                                                                    --white-color: #fff;
+                                                                                                                                    --light-color: #f8f9fa;
+                                                                                                                                    --danger-color: #bd4343;
+                                                                                                                                    --redish-color: #cf450e;
+                                                                                                                                    --success-color: #6fbb67;
+                                                                                                                                    --warning-color: #f8b706f1;
+                                                                                                                                    --light-blue-color: #075fb8;
+                                                                                                                                    --gray-color: #808080;
+                                                                                                                                    --light-gray-color: #d8d3d3;
+                                                                                                                                    --light-gray-color-2: #e3e3e3;
+                                                                                                                                    --black-color: #000;
+                                                                                                                                }
+                                                                                                                                /* End Custom properties */
+                                                                                                                                /* MESSAGE */
+                                                                                                                                
+                                                                                                                                .form-success-animated {
+                                                                                                                                    margin-top: 0px;
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: center;
+                                                                                                                                    background: #50c058;
+                                                                                                                                    padding: 9px 12px;
+                                                                                                                                    color: #fff;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    animation: show-slide .5s ease-in-out;
+                                                                                                                                    font-size: 17px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                .form-warning-animated {
+                                                                                                                                    margin-top: 0px;
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: center;
+                                                                                                                                    background: #ea4758;
+                                                                                                                                    padding: 9px 12px;
+                                                                                                                                    color: #fff;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    animation: show-slide .5s ease-in-out;
+                                                                                                                                    font-size: 17px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                .show-form {
+                                                                                                                                    animation: show-slide .5s ease-in-out;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @keyframes show-slide {
+                                                                                                                                    from {
+                                                                                                                                        transform: translateY(-15px);
+                                                                                                                                    }
+                                                                                                                                    to {
+                                                                                                                                        transform: translateY(0px);
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @keyframes show-scale {
+                                                                                                                                    from {
+                                                                                                                                        transform: scale(1.1);
+                                                                                                                                    }
+                                                                                                                                    to {
+                                                                                                                                        transform: scale(1.0);
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* END MESSAGE */
+                                                                                                                                
+                                                                                                                                .multi-div {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: space-between;
+                                                                                                                                    align-items: stretch;
+                                                                                                                                    gap: .6rem;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    .multi-div {
+                                                                                                                                        display: flex;
+                                                                                                                                        justify-content: stretch;
+                                                                                                                                        align-items: stretch;
+                                                                                                                                        flex-direction: column;
+                                                                                                                                        gap: 1.0rem;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* ====================================================
+# Sign In - DIVISION
+=====================================================*/
+                                                                                                                                
+                                                                                                                                #sign_in {
+                                                                                                                                    width: 600px;
+                                                                                                                                    background: #fff;
+                                                                                                                                    padding: 50px 40px 40px 40px;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    text-align: center;
+                                                                                                                                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in_link,
+                                                                                                                                #sign_up_link {
+                                                                                                                                    color: #504f4f;
+                                                                                                                                    transition: all .3s;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in_link:hover,
+                                                                                                                                #sign_up_link:hover {
+                                                                                                                                    color: #002240;
+                                                                                                                                    cursor: pointer;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in header {
+                                                                                                                                    font-size: 35px;
+                                                                                                                                    font-weight: 600;
+                                                                                                                                    color: rgb(24, 138, 24);
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in a {
+                                                                                                                                    color: #5372F0;
+                                                                                                                                    text-decoration: none;
+                                                                                                                                    transition: all .3s;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in a:hover {
+                                                                                                                                    color: #bfbfbf;
+                                                                                                                                }
+                                                                                                                                /* === Media Query === */
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 1060px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        width: 60%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 768px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        width: 80%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 476px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        margin-top: 400px;
+                                                                                                                                        margin-bottom: 100px;
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 326px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 300px) {
+                                                                                                                                    #sign_in {
+                                                                                                                                        width: 100%;
+                                                                                                                                        padding: 50px 22px 40px 22px;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* === End Query === */
+                                                                                                                                /* ==================================================
+# Sign In - Form
+===================================================*/
+                                                                                                                                
+                                                                                                                                h2.head-text {
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                    font-size: 30px;
+                                                                                                                                    font-weight: 345;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: stretch;
+                                                                                                                                    flex-flow: column wrap;
+                                                                                                                                    gap: 1.0rem;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in ::placeholder {
+                                                                                                                                    font-size: 15px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in p {
+                                                                                                                                    padding-top: 10px;
+                                                                                                                                    font-size: 14px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                    font-weight: 600;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group input {
+                                                                                                                                    width: 100%;
+                                                                                                                                    padding: 8px 40px;
+                                                                                                                                    outline: none;
+                                                                                                                                    border: none;
+                                                                                                                                    background: none;
+                                                                                                                                    font-size: 15px;
+                                                                                                                                    border: 2px solid var(--light-gray-color);
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .name-group,
+                                                                                                                                #sign_in .input-group .password-group {
+                                                                                                                                    position: relative;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group i {
+                                                                                                                                    position: absolute;
+                                                                                                                                    top: 50%;
+                                                                                                                                    transform: translateY(-50%);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .icon {
+                                                                                                                                    left: 15px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .eye {
+                                                                                                                                    right: 15px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .eye.show {
+                                                                                                                                    display: block;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .eye.hide {
+                                                                                                                                    display: none;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .fa-eye {
+                                                                                                                                    display: block;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .fa-eye-slash {
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                    display: none;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .input-group .fa-eye:hover,
+                                                                                                                                #sign_in .input-group .fa-eye-slash:hover {
+                                                                                                                                    cursor: pointer;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .sign_in_save_changes {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: stretch;
+                                                                                                                                    flex-flow: column wrap;
+                                                                                                                                    margin-top: 8px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #submit {
+                                                                                                                                    display: inline-block;
+                                                                                                                                    margin-top: 5px;
+                                                                                                                                    padding: 9px 10px;
+                                                                                                                                    cursor: pointer;
+                                                                                                                                    background: #002240;
+                                                                                                                                    border: none;
+                                                                                                                                    border: 2px solid#002240;
+                                                                                                                                    color: #fff;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    transition: all .4s ease-in-out;
+                                                                                                                                    white-space: nowrap;
+                                                                                                                                    font-size: 15px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #submit:hover {
+                                                                                                                                    background-color: transparent;
+                                                                                                                                    border: 2px solid#002240;
+                                                                                                                                    color: #002240;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .back-home {
+                                                                                                                                    margin-top: 20px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .back-home a {
+                                                                                                                                    text-decoration: none;
+                                                                                                                                    color: #002240;
+                                                                                                                                    transition: all .4s ease;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_in .back-home a:hover {
+                                                                                                                                    color: #808080;
+                                                                                                                                }
+                                                                                                                                /* ======= Media Queries ======= */
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    #sign_in .container {
+                                                                                                                                        padding: 0 25px;
+                                                                                                                                    }
+                                                                                                                                    #sign_in {
+                                                                                                                                        padding: 35px;
+                                                                                                                                    }
+                                                                                                                                    @media only screen and (max-width: 326px) {
+                                                                                                                                        #sign_in p {
+                                                                                                                                            font-size: 13px;
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    @media only screen and (max-width: 300px) {
+                                                                                                                                        #sign_in .container {
+                                                                                                                                            padding: 0 15px;
+                                                                                                                                        }
+                                                                                                                                        #sign_in {
+                                                                                                                                            padding: 25px;
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* ======= End Queries ======== */
+                                                                                                                                /* ====================================================
+# Sign Up - DIVISION
+=====================================================*/
+                                                                                                                                
+                                                                                                                                #sign_up {
+                                                                                                                                    width: 600px;
+                                                                                                                                    background: #fff;
+                                                                                                                                    padding: 50px 40px 40px 40px;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    text-align: center;
+                                                                                                                                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+                                                                                                                                    display: none;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up header {
+                                                                                                                                    font-size: 35px;
+                                                                                                                                    font-weight: 600;
+                                                                                                                                    color: rgb(24, 138, 24);
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up a {
+                                                                                                                                    color: #5372F0;
+                                                                                                                                    text-decoration: none;
+                                                                                                                                    transition: all .3s;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up a:hover {
+                                                                                                                                    color: #bfbfbf;
+                                                                                                                                }
+                                                                                                                                /* === Media Query === */
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 1060px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        width: 60%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 768px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        width: 80%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 476px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        margin-top: 400px;
+                                                                                                                                        margin-bottom: 100px;
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 326px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        width: 90%;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 300px) {
+                                                                                                                                    #sign_up {
+                                                                                                                                        width: 100%;
+                                                                                                                                        padding: 50px 22px 40px 22px;
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* === End Query === */
+                                                                                                                                /* ==================================================
+# Sign Up - Form
+===================================================*/
+                                                                                                                                
+                                                                                                                                h2.head-text {
+                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                    font-size: 30px;
+                                                                                                                                    font-weight: 345;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: stretch;
+                                                                                                                                    flex-flow: column wrap;
+                                                                                                                                    gap: 1.0rem;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up ::placeholder {
+                                                                                                                                    font-size: 15px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up p {
+                                                                                                                                    padding-top: 10px;
+                                                                                                                                    font-size: 14px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                    font-weight: 600;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group input {
+                                                                                                                                    width: 100%;
+                                                                                                                                    padding: 8px 40px;
+                                                                                                                                    outline: none;
+                                                                                                                                    border: none;
+                                                                                                                                    background: none;
+                                                                                                                                    font-size: 15px;
+                                                                                                                                    border: 2px solid var(--light-gray-color);
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .name-group,
+                                                                                                                                #sign_up .input-group .email-group,
+                                                                                                                                #sign_up .input-group .password-group-1,
+                                                                                                                                #sign_up .input-group .password-group-2 {
+                                                                                                                                    position: relative;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group i {
+                                                                                                                                    position: absolute;
+                                                                                                                                    top: 50%;
+                                                                                                                                    transform: translateY(-50%);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .icon {
+                                                                                                                                    left: 15px;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .eye {
+                                                                                                                                    right: 15px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .eye.show {
+                                                                                                                                    display: block;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .eye.hide {
+                                                                                                                                    display: none;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .fa-eye {
+                                                                                                                                    display: block;
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .fa-eye-slash {
+                                                                                                                                    color: var(--gray-color);
+                                                                                                                                    display: none;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .input-group .fa-eye:hover,
+                                                                                                                                #sign_up .input-group .fa-eye-slash:hover {
+                                                                                                                                    cursor: pointer;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .sign_up_save_changes {
+                                                                                                                                    display: flex;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    align-items: stretch;
+                                                                                                                                    flex-flow: column wrap;
+                                                                                                                                    margin-top: 8px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #save {
+                                                                                                                                    display: inline-block;
+                                                                                                                                    margin-top: 5px;
+                                                                                                                                    padding: 9px 10px;
+                                                                                                                                    cursor: pointer;
+                                                                                                                                    background: #002240;
+                                                                                                                                    border: none;
+                                                                                                                                    border: 2px solid#002240;
+                                                                                                                                    color: #fff;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                    transition: all .4s ease-in-out;
+                                                                                                                                    white-space: nowrap;
+                                                                                                                                    font-size: 15px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #save:hover {
+                                                                                                                                    background-color: transparent;
+                                                                                                                                    border: 2px solid#002240;
+                                                                                                                                    color: #002240;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .back-home {
+                                                                                                                                    margin-top: 20px;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .back-home a {
+                                                                                                                                    text-decoration: none;
+                                                                                                                                    color: #002240;
+                                                                                                                                    transition: all .4s ease;
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                #sign_up .back-home a:hover {
+                                                                                                                                    color: #808080;
+                                                                                                                                }
+                                                                                                                                /* ======= Media Queries ======= */
+                                                                                                                                
+                                                                                                                                @media only screen and (max-width: 576px) {
+                                                                                                                                    #sign_up .container {
+                                                                                                                                        padding: 0 25px;
+                                                                                                                                    }
+                                                                                                                                    #sign_up {
+                                                                                                                                        padding: 35px;
+                                                                                                                                    }
+                                                                                                                                    @media only screen and (max-width: 326px) {
+                                                                                                                                        #sign_up p {
+                                                                                                                                            font-size: 13px;
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    @media only screen and (max-width: 300px) {
+                                                                                                                                        #sign_up .container {
+                                                                                                                                            padding: 0 15px;
+                                                                                                                                        }
+                                                                                                                                        #sign_up {
+                                                                                                                                            padding: 25px;
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                /* ======= End Queries ======== */

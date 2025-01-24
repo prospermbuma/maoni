@@ -1,0 +1,333 @@
+/* ====================================================
+# Form
+=====================================================*/
+
+#form .row.commenter {
+    margin: 0 0 40px 0;
+}
+
+#form .row.commenter img {
+    width: 300px;
+}
+
+#form .lead {
+    padding-bottom: 60px;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+#form .text {
+    margin-top: 40px;
+}
+
+#form .text .para {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.container.form-wrapper {
+    padding: 0 10px;
+}
+
+.wrapper {
+    width: 700px;
+    background: #fff;
+    padding: 40px 40px 35px 40px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper header {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.wrapper .success-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.wrapper .form-success-animated {
+    color: #21a327;
+    display: block;
+    padding-top: 10px;
+    animation: show-slide .3s ease-in-out;
+}
+
+@keyframes show-slide {
+    from {
+        transform: translateY(-15px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.wrapper .form-warning-animated {
+    display: block;
+    color: #dc3545;
+    padding-top: 10px;
+}
+
+.wrapper form {
+    margin: 25px 0;
+}
+
+.wrapper form .joint-fields {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.wrapper form .field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.wrapper form .field.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        margin-left: 0;
+    }
+    20%, 80% {
+        margin-left: -12px;
+    }
+    40%, 60% {
+        margin-left: 12px;
+    }
+}
+
+form .field .input-area {
+    position: relative;
+}
+
+form input {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    border-bottom-width: 2px;
+    padding: 0px 45px;
+    outline: none;
+}
+
+form select {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    border-bottom-width: 2px;
+    padding: 0px 45px;
+    outline: none;
+}
+
+form .calendar .calendar-text {
+    text-align: left;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+form .gender .gender-text {
+    text-align: left;
+    font-size: 17px;
+}
+
+form .gender input[type=radio] {
+    height: 40px;
+    width: 18px;
+}
+
+form .gender .radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .6rem;
+}
+
+form textarea {
+    height: 150px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    border-bottom-width: 2px;
+    padding: 16px 0px 0px 45px;
+    outline: none;
+}
+
+form .field.error input, form .field.error textarea {
+    border-color: #dc3545;
+}
+
+form .field.success input, form .field.success textarea {
+    border-color: #21a327;
+}
+
+form input::placeholder {
+    color: #bfbfbf;
+    font-size: 17px;
+}
+
+form .field i {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+form .comments i {
+    top: 30px;
+}
+
+form .field .icon {
+    left: 15px;
+    color: #bfbfbf;
+}
+
+form .field .icon-success {
+    left: 15px;
+    color: #21a327;
+}
+
+form .field .error-icon {
+    right: 15px;
+    color: #dc3545;
+}
+
+form .field .success-icon {
+    right: 15px;
+    color: #21a327;
+}
+
+form .field .eye-icon {
+    right: 15px;
+    color: #bfbfbf;
+    pointer-events: all;
+}
+
+form .field .eye-icon:hover {
+    cursor: pointer;
+}
+
+form .field .fa-eye-slash {
+    display: none;
+}
+
+form .field .eye-icon.show {
+    display: block;
+}
+
+form .field .eye-icon.hide {
+    display: none;
+}
+
+form .field .error-txt {
+    margin-top: 5px;
+    color: #dc3545;
+    text-align: left;
+}
+
+form .field .error, form .field .success {
+    display: none;
+}
+
+form .field.error .error, .wrapper form .field.success .success {
+    display: block;
+}
+
+.wrapper a {
+    color: #5372F0;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.wrapper a:hover {
+    color: #bfbfbf;
+}
+
+form input[type=submit] {
+    margin-top: 10px;
+    border: none;
+    /* background: #5372F0; */
+    background: #13256d;
+    color: #fff;
+    transition: background 0.2s ease;
+}
+
+form input[type=submit]:hover {
+    cursor: pointer;
+    background: #2c52ed;
+}
+
+/* === Media Query === */
+
+@media only screen and (max-width: 1060px) {
+    .wrapper {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .wrapper {
+        width: 90%;
+    }
+    #form .lead {
+        padding-bottom: 30px;
+    }
+    #form .row.commenter img {
+        width: 100%;
+    }
+    .para {
+        text-align: center;
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .navbar .nav-brand {
+        font-size: 15px;
+    }
+    .navbar .nav-brand .nav-brand-logo .nav-logo {
+        width: 40px;
+    }
+    .wrapper {
+        width: 95%;
+    }
+    .wrapper form .joint-fields {
+        flex-flow: column wrap;
+        gap: .0rem;
+    }
+}
+
+@media only screen and (max-width: 326px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .wrapper {
+        width: 100%;
+        padding: 50px 22px 40px 22px;
+    }
+}
+
+/* === End Query === */

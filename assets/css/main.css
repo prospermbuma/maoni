@@ -1,0 +1,219 @@
+/* ====================================================
+# General
+=====================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #fff;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.5rem;
+}
+
+main {
+    margin-top: 70px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* ====================================================
+# Navigation
+=====================================================*/
+
+.navbar {
+    background: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3.0rem;
+    height: 70px;
+    width: 100%;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    z-index: 1030;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-brand {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+}
+
+.navbar .nav-brand .nav-brand-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+
+.navbar .nav-brand .nav-brand-logo .nav-logo {
+    width: 45px;
+    transition: all 2s;
+}
+
+.navbar .nav-brand .nav-brand-logo .nav-logo:hover {
+    transform: rotate(360deg);
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    outline: none;
+    font-size: 17px;
+    color: #767676;
+    transition: all.3s;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #13256d;
+}
+
+.navbar .navbar-nav .nav-item .nav-link.active {
+    color: #13256d;
+    font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-item .nav-link.active:hover {
+    color: #767676;
+}
+
+.navbar #checkbtn {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar #checkbtn:hover {
+    cursor: pointer;
+}
+
+.navbar #checkbtn .fa-bars {
+    font-size: 22px;
+    border: 1px solid #13256d;
+    padding: 7px 12px;
+    border-radius: 5px;
+    color: #13256d;
+}
+
+.navbar #check {
+    display: none;
+}
+
+/* === Media Query === */
+
+@media only screen and (max-width: 1060px) {
+    .container.commento {
+        padding: 0 120px;
+    }
+    .row {
+        gap: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 986px), (min-width: 986px) {
+    .navbar {
+        justify-content: space-between;
+        gap: 0rem;
+    }
+    .navbar #checkbtn {
+        display: block;
+    }
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #f8f9fa;
+        width: 100%;
+        height: 100%;
+        padding: 80px 60px 100px 60px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        gap: 1.0rem;
+        transition: all .5s;
+        z-index: 1030;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+    .navbar #check:checked~.navbar-nav {
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container.commento {
+        padding: 0 70px;
+    }
+    .row {
+        gap: 0.5rem;
+    }
+    .row.commenter {
+        margin-top: 0px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .container.commento {
+        padding: 0 60px;
+    }
+    .row {
+        flex-flow: column wrap;
+        gap: 0.5rem;
+    }
+    .row.commenter {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .container.commento {
+        padding: 0 40px;
+    }
+    .row {
+        flex-flow: column wrap;
+        gap: 0.5rem;
+    }
+    .navbar {
+        padding: 0 20px;
+    }
+    .navbar .nav-brand {
+        font-size: 15px;
+    }
+    .navbar .nav-brand .nav-brand-logo .nav-logo {
+        width: 40px;
+    }
+}
+
+/* === End Query === */
