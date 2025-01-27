@@ -15,26 +15,26 @@ form.onsubmit = (e) => {
     const xhr = new XMLHttpRequest();
 
     // Open connection
-    xhr.open('POST', './process_login.php', true);
+    xhr.open('POST', '/pages/process_login.php', true);
 
     xhr.onreadystatechange = function () {
         console.log('Ready State: ', xhr.readyState);
         if (this.status === 200 && this.readyState === 4) {
             let response = xhr.response;
-            if (response.indexOf("Incorrect Login") != -1) {
+            if (response.indexOf("Incorrect Login") != -1 || response.indexOf("Fatal error") != -1) {
                 message.classList.add('form-warning-animated');
                 message.classList.remove('form-success-animated');
                 message.innerText = response;
             } else {
-                setTimeout(() => {
-                    /* === Show and hide success message  === */
-                    message.classList.remove('form-warning-animated');
-                    message.classList.remove('form-success-animated');
-                    message.innerText = "";
-                    /* === Clear inputs  === */
-                    username.value = "";
-                    password.value = "";
-                }, 3000);
+                // setTimeout(() => {
+                /* === Show and hide success message  === */
+                message.classList.remove('form-warning-animated');
+                message.classList.remove('form-success-animated');
+                message.innerText = "";
+                /* === Clear inputs  === */
+                username.value = "";
+                password.value = "";
+                // }, 3000);
 
                 /* === Redirect to view_data page  === */
                 window.location.href = 'view_data.php';

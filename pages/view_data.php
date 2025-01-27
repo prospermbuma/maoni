@@ -118,7 +118,7 @@
     The query selects the columns to be displayed and sets the number of rows to be displayed per page, starting with
     the record number zero. (The variable $start was set to zero.)
     */
-                        $q = "SELECT firstname, lastname, email, phone, region, district, gender, birthdate, comments, DATE_FORMAT(saved_date, '%M %D, %Y')
+                        $q = "SELECT firstname, lastname, email, phone, gender, birthdate, comments, DATE_FORMAT(saved_date, '%M %D, %Y')
     AS saved_date, id FROM student ORDER BY id ASC LIMIT $start, $pagerows";
                         $result = @mysqli_query($conn, $q); // Run the query
                         $records = mysqli_num_rows($result);
@@ -131,8 +131,6 @@
                                 <th id="th-3"><i class="far fa-user"></i> Jina la Mwisho</th>
                                 <th id="th-4"><i class="far fa-envelope"></i> Barua pepe</th>
                                 <th id="th-5"><i class="fas fa-phone-alt"></i> Namba ya simu</th>
-                                <th id="th-6"><i class="fas fa-map-marker-alt"></i> Mkoa</th>
-                                <th id="th-6"><i class="fas fa-map-marker-alt"></i> Wilaya</th>
                                 <th id="th-7"><i class="fas fa-transgender"></i> Jinsia</th>
                                 <th id="th-8"><i class="far fa-calendar-check"></i> Tarehe ya kuzaliwa</th>
                                 <th id="th-9"><i class="far fa-comment-dots"></i> Maoni</th>
@@ -146,8 +144,6 @@
                              <td>' . $row['lastname'] . '</td>
                              <td>' . $row['email'] . '</td>
                              <td>' . $row['phone'] . '</td>
-                             <td>' . $row['region'] . '</td>
-                             <td>' . $row['district'] . '</td>
                              <td>' . $row['gender'] . '</td>
                              <td>' . $row['birthdate'] . '</td>
                              <td>' . $row['comments'] . '</td>

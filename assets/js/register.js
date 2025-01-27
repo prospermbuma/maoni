@@ -19,7 +19,7 @@ register_form.onsubmit = (e) => {
     const xhr_2 = new XMLHttpRequest();
 
     // Open connection
-    xhr_2.open('POST', './process_register.php', true);
+    xhr_2.open('POST', '/pages/process_register.php', true);
 
     // Execution of the ajax call
     // xhr.onload = function () {
@@ -44,7 +44,7 @@ register_form.onsubmit = (e) => {
             console.log('Ready State: ', xhr_2.readyState);
             if (this.status === 200 && this.readyState === 4) {
                 let response = xhr_2.response;
-                if (response.indexOf("Sorry, user already taken") != -1 || response.indexOf("Fields cannot be blank") != -1 || response.indexOf("Password mismatch") != -1 || response.indexOf("Not saved ") != -1) {
+                if (response.indexOf("Sorry, user already taken") != -1 || response.indexOf("Fields cannot be blank") != -1 || response.indexOf("Password mismatch") != -1 || response.indexOf("Not saved ") != -1 || response.indexOf("Fatal error") != -1 || response.indexOf("Server error") != -1) {
                     sign_up_message.classList.add('form-warning-animated');
                     sign_up_message.classList.remove('form-success-animated');
                     sign_up_message.innerText = response;

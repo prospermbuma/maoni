@@ -2,22 +2,21 @@
 <html lang="en">
 
 <head>
-    <!-- Metadata -->
+    <!-- == Metadata == -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome Online CDN -->
+    <!-- == Font Awesome Online CDN == -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
-    <!-- Font Awesome Offline CDN -->
+    <!-- == Font Awesome Offline CDN == -->
     <link rel="stylesheet" href="assets/vendors/fontawesome-free-5.15.2-web/css/all.css">
-    <!-- Favicon -->
+    <!-- == Favicon == -->
     <link rel="shortcut icon" href="assets/img/ifm_logo_2.png" type="image/x-icon">
-    <!-- Main CSS -->
+    <!-- == CSS == -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Index CSS -->
     <link rel="stylesheet" href="assets/css/index.css">
-    <!-- Title -->
-    <title>Form</title>
+    <!-- == Title == -->
+    <title>Sanduku | Maoni</title>
 </head>
 
 <body>
@@ -39,7 +38,6 @@
     </nav>
     <!-- End nav -->
     <main>
-
         <section id="form">
             <div class="container commento">
                 <div class="row commenter">
@@ -49,8 +47,6 @@
                 </div>
             </div>
             <div class="container form-wrapper">
-                <div class="row">
-                </div>
                 <div class="row">
                     <!-- Form Wrapper -->
                     <div class="wrapper">
@@ -99,64 +95,6 @@
                                     <div class="error error-txt">Namba ya simu inahitajika</div>
                                 </div>
                             </div>
-                            <div class="joint-fields">
-                                <div class="field region">
-                                    <div class="regions">
-                                        <div class="input-area">
-                                            <select name="region" id="region">
-                                                <option>Chagua Mkoa</option>
-                                                <option value="Arusha">Arusha</option>
-                                                <option value="Dar es salaam">Dar es salaam</option>
-                                                <option value="Dodoma">Dodoma</option>
-                                                <option value="Geita">Geita</option>
-                                                <option value="Iringa">Iringa</option>
-                                                <option value="Kagera">Kagera</option>
-                                                <option value="Katavi">Katavi</option>
-                                                <option value="Kigoma">Kigoma</option>
-                                                <option value="Kilimanjaro">Kilimanjaro</option>
-                                                <option value="Lindi">Lindi</option>
-                                                <option value="Manyara">Manyara</option>
-                                                <option value="Mara">Mara</option>
-                                                <option value="Mbeya">Mbeya</option>
-                                                <option value="Morogoro">Morogoro</option>
-                                                <option value="Mtwara">Mtwara</option>
-                                                <option value="Mwanza">Mwanza</option>
-                                                <option value="Njombe">Njombe</option>
-                                                <option value="Pwani">Pwani</option>
-                                                <option value="Rukwa">Rukwa</option>
-                                                <option value="Ruvuma">Ruvuma</option>
-                                                <option value="Shinyanga">Shinyanga</option>
-                                                <option value="Simiyu">Simiyu</option>
-                                                <option value="Singida">Singida</option>
-                                                <option value="Songwe">Songwe</option>
-                                                <option value="Tabora">Tabora</option>
-                                                <option value="Tanga">Tanga</option>
-                                            </select>
-                                            <i class="icon fas fa-map-marker-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="field district" id="response">
-                                    <div class="districts">
-                                        <div class="input-area">
-                                            <select name="district" id="district">
-                                                <option>Chagua Wilaya</option>
-                                            </select>
-                                            <i class="icon fas fa-map-marker-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field calendar">
-                                <h4 class="calendar-text">Tarehe ya kuzaliwa:</h4>
-                                <div class="input-area">
-                                    <input type="date" name="birthdate" id="birthdate">
-                                    <i class="icon fas fa-calendar-check"></i>
-                                    <i class="error error-icon fas fa-exclamation-circle"></i>
-                                    <i class="success icon-success fas fa-calendar-check"></i>
-                                </div>
-                                <div class="error error-txt">Tarehe ya kuzaliwa inahitajika</div>
-                            </div>
                             <div class="field comments">
                                 <div class="input-area">
                                     <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Maoni"></textarea>
@@ -166,23 +104,9 @@
                                 </div>
                                 <div class="error error-txt">Maoni yanahitajika</div>
                             </div>
-                            <div class="field gender">
-                                <div class="input-area">
-                                    <h4 class="gender-text">Jinsia:</h4>
-                                    <div class="radio">
-                                        <input type="radio" name="sex" class="gender" value="male" checked>
-                                        <label for="sex" class="male">Mwanamume</label>
-                                    </div>
-                                    <div class="radio">
-                                        <input type="radio" name="sex" class="gender" value="female">
-                                        <label for="sex" class="female">Mwanamke</label>
-                                    </div>
-                                </div>
-                            </div>
                             <input type="submit" value="Tuma maoni">
-                            </>
+                            <!-- End Form Wrapper -->
                     </div>
-                    <!-- End Form Wrapper -->
                 </div>
                 <div class="row">
                     <div class="text">

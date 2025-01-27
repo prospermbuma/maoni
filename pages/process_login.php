@@ -1,31 +1,25 @@
 <?php
 session_start();
-// Form submission
-// With no use of database
-// if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
 
-//     $password = $_POST['password'];
+// Make a connection
+DEFINE('HOST', 'localhost');
+DEFINE('USER', 'root');
+DEFINE('PASS', '');
+DEFINE('DB', 'school_manager');
 
-//     if ($username == 'Prosper' && $password == 'Prodeveloper-1') {
-//         $_SESSION['username'] = $username;
-//         header('Location: view_data.php');
-//     }
-//     else {
-//         echo "Incorrect Login";
-//     }
-// }
+$conn = @mysqli_connect(HOST, USER, PASS, DB);
 
-// With the use of database
-// Require connection
-require_once('../assets/required/connection.php');
+if (!$conn) {
+    die("Failed to connect to " . DB . " " . mysqli_connect_error());
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = filter_input(INPUT_POST, strtolower('username'), FILTER_SANITIZE_SPECIAL_CHARS);
 
     $password = $_POST['password'];
 
-    $query = "SELECT username FROM admin WHERE username = '$username' AND pswd = SHA1('$password')";
+    $query = "SELECT username FROM users WHERE username = '$username' AND pswd = SHA1('$password')";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result)) {
@@ -34,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Incorrect Login";
     }
-     // Free result
-     mysqli_free_result($result);
+    // Free result
+    mysqli_free_result($result);
 }
 
 // Close connection
