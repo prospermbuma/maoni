@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
         <input type="checkbox" name="check" id="check">
         <ul class="navbar-nav">
             <li class="nav-item flex-space-between">
-                <p>Welcome <?php echo $_SESSION['username']; ?></p> <i class="far fa-smile"></i>
+                <p>Welcome <?php echo $_SESSION['username']; ?></p>
             </li>
             <li class="nav-item"><a href="change_password.php" class="nav-link"><i class="fas fa-lock"></i> Change password</li>
             <li class="nav-item"><a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i> Signout</a></li>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) {
                             $pages = $_GET['p'];
                         } else {
                             //First, check for the total number of records
-                            $q = "SELECT COUNT(id) FROM student";
+                            $q = "SELECT COUNT(id) FROM maoni";
                             $result = @mysqli_query($conn, $q);
                             $row = @mysqli_fetch_array($result, MYSQLI_NUM);
                             $records = $row[0];
@@ -97,7 +97,7 @@ if (!isset($_SESSION['username'])) {
                         }
 
                         $q = "SELECT firstname, lastname, email, phone, attachment, comments, DATE_FORMAT(saved_date, '%M %D, %Y')
-    AS saved_date, id FROM student ORDER BY id ASC LIMIT $start, $pagerows";
+    AS saved_date, id FROM maoni ORDER BY id ASC LIMIT $start, $pagerows";
                         $result = @mysqli_query($conn, $q); // Run the query
                         $records = mysqli_num_rows($result);
                         if ($result) { // If it ran without a problem, display the records
@@ -121,7 +121,13 @@ if (!isset($_SESSION['username'])) {
                              <td>' . $row['lastname'] . '</td>
                              <td>' . $row['email'] . '</td>
                              <td>' . $row['phone'] . '</td>
-                             <td>' . $row['attachment'] . '</td>
+                             <td>';
+                                if (!empty($row['attachment'])) {
+                                    echo '<a href="uploads/' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '" download>' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '</a>';
+                                } else {
+                                    echo 'No attachment';
+                                }
+                                echo '</td>
                              <td>' . $row['comments'] . '</td>
                             <td>' . $row['saved_date'] . '</td>
                             </tr>    
@@ -137,7 +143,7 @@ if (!isset($_SESSION['username'])) {
                         }
 
                         //Now display the figure for the total number of records
-                        $q = "SELECT COUNT(id) FROM student";
+                        $q = "SELECT COUNT(id) FROM maoni";
                         $result = @mysqli_query($conn, $q);
                         $row = @mysqli_fetch_array($result, MYSQLI_NUM);
                         $records = $row[0];

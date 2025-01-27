@@ -18,53 +18,54 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `school`
+-- Database: `school_manager`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `maoni`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `maoni` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(150) NOT NULL,
-  `lastname` varchar(150) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `phone` varchar(200) NOT NULL,
-  `attachment` varchar(255) NOT NULL,
-  `comments` text NOT NULL,
-  `saved_date` timestamp NOT NULL DEFAULT current_timestamp()
+  `firstname` varchar(200) NOT NULL,
+  `lastname` varchar(200) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `pswd` varchar(150) NOT NULL,
+  `registered_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `maoni`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `maoni` (`id`, `firstname`, `lastname`, `email`, `phone`, `attachment`, `comments`, `saved_date`) VALUES
-(1, 'Prosper', 'Mbuma', 'prosper@yahoo.com', '0716491716', '../uploads/6797d8f71d776.pdf', 'We need special treatment for computing students since we pay a bit more than non-computing students.', '2025-01-27 19:05:27');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `pswd`, `registered_date`) VALUES
+(1, 'Prosper', 'Mbuma', 'prosperity', 'prosper.mbuma@yahoo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2025-01-27 16:33:21'),
+(2, 'John ', 'Doe', 'johnny', 'john.doe@yahoo.com', '06d2586d407fd3cc02eea5952fa7ebb8e790d93f', '2025-01-27 16:45:19');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `maoni`
+-- Indexes for table `users`
 --
-ALTER TABLE `maoni`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `maoni`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `maoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
