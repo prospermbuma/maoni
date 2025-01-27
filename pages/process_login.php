@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $password = $_POST['password'];
 
-    $query = "SELECT username FROM school_manager WHERE username = '$username' AND pswd = SHA1('$password')";
+    $query = "SELECT username FROM admin WHERE username = '$username' AND pswd = SHA1('$password')";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result)) {
