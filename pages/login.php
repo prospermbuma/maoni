@@ -24,7 +24,7 @@ session_start();
     <div id="sign_in">
         <div class="message"></div>
         <h2 class="head-text">User Login</h2>
-        <form action="process_login.php" method="POST">
+        <form method="POST">
             <div class="input-group">
                 <div class="name-group">
                     <input type="text" name="username" id="username" placeholder="Username">

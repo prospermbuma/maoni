@@ -54,7 +54,7 @@
                             Sanduku la maoni
                         </header>
                         <p class="message"></p>
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="joint-fields">
                                 <div class="field name-1">
                                     <div class="input-area">
@@ -95,6 +95,13 @@
                                     <div class="error error-txt">Namba ya simu inahitajika</div>
                                 </div>
                             </div>
+                            <div class="field file">
+                                <h4>Kiambatanishi:</h4>
+                                <div class="input-area">
+                                    <input type="file" name="attach" id="attach">
+                                    <i class="icon fas fa-file-alt"></i>
+                                </div>
+                            </div>
                             <div class="field comments">
                                 <div class="input-area">
                                     <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Maoni"></textarea>
@@ -105,8 +112,9 @@
                                 <div class="error error-txt">Maoni yanahitajika</div>
                             </div>
                             <input type="submit" value="Tuma maoni">
-                            <!-- End Form Wrapper -->
+                        </form>
                     </div>
+                    <!-- End Form Wrapper -->
                 </div>
                 <div class="row">
                     <div class="text">
@@ -126,24 +134,6 @@
     <script src="assets/js/main.js"></script>
     <!-- Index JS -->
     <script src="assets/js/index.js"></script>
-    <script>
-        /* ===================== # Address Dropdown List ======================*/
-        $(document).ready(function() {
-            $("select#region").change(function() {
-                let selected_Region = $("#region option:selected").val();
-                $.ajax({
-                    type: "POST",
-                    url: "pages/process_address_request.php",
-                    // url: "pages/save_to_db.php",
-                    data: {
-                        region: selected_Region
-                    }
-                }).done(function(data) {
-                    $("#response").html(data);
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['username'] = ucfirst($username);
         header('Location: view_data.php');
     } else {
-        echo "Incorrect Login";
+        echo "Incorrect Credentials";
     }
     // Free result
     mysqli_free_result($result);

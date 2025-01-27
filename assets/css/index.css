@@ -61,6 +61,7 @@
     from {
         transform: translateY(-15px);
     }
+
     to {
         transform: translateY(0px);
     }
@@ -92,13 +93,19 @@
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         margin-left: 0;
     }
-    20%, 80% {
+
+    20%,
+    80% {
         margin-left: -12px;
     }
-    40%, 60% {
+
+    40%,
+    60% {
         margin-left: 12px;
     }
 }
@@ -118,40 +125,6 @@ form input {
     outline: none;
 }
 
-form select {
-    height: 40px;
-    width: 100%;
-    font-size: 16px;
-    border: 1px solid #bfbfbf;
-    border-radius: 5px;
-    border-bottom-width: 2px;
-    padding: 0px 45px;
-    outline: none;
-}
-
-form .calendar .calendar-text {
-    text-align: left;
-    padding-bottom: 10px;
-    font-weight: 700;
-}
-
-form .gender .gender-text {
-    text-align: left;
-    font-size: 17px;
-}
-
-form .gender input[type=radio] {
-    height: 40px;
-    width: 18px;
-}
-
-form .gender .radio {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: .6rem;
-}
-
 form textarea {
     height: 150px;
     width: 100%;
@@ -163,17 +136,29 @@ form textarea {
     outline: none;
 }
 
-form .field.error input, form .field.error textarea {
+form .field.error input,
+form .field.error textarea {
     border-color: #dc3545;
 }
 
-form .field.success input, form .field.success textarea {
+form .field.success input,
+form .field.success textarea {
     border-color: #21a327;
 }
 
 form input::placeholder {
     color: #bfbfbf;
     font-size: 17px;
+}
+
+form .field.file h4 {
+    text-align: left;
+    margin-top: -8px;
+    margin-bottom: 8px;
+}
+
+form .field.file #attach {
+    padding: 12px 45px 35px 45px;
 }
 
 form .field i {
@@ -236,11 +221,13 @@ form .field .error-txt {
     text-align: left;
 }
 
-form .field .error, form .field .success {
+form .field .error,
+form .field .success {
     display: none;
 }
 
-form .field.error .error, .wrapper form .field.success .success {
+form .field.error .error,
+.wrapper form .field.success .success {
     display: block;
 }
 
@@ -286,12 +273,15 @@ form input[type=submit]:hover {
     .wrapper {
         width: 90%;
     }
+
     #form .lead {
         padding-bottom: 30px;
     }
+
     #form .row.commenter img {
         width: 100%;
     }
+
     .para {
         text-align: center;
         padding: 0 40px;
@@ -302,15 +292,19 @@ form input[type=submit]:hover {
     .navbar {
         padding: 0 20px;
     }
+
     .navbar .nav-brand {
         font-size: 15px;
     }
+
     .navbar .nav-brand .nav-brand-logo .nav-logo {
         width: 40px;
     }
+
     .wrapper {
         width: 95%;
     }
+
     .wrapper form .joint-fields {
         flex-flow: column wrap;
         gap: .0rem;
