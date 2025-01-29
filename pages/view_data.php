@@ -109,7 +109,7 @@ if (!isset($_SESSION['username'])) {
                                 <th id="th-3"><i class="far fa-user"></i> Jina la Mwisho</th>
                                 <th id="th-4"><i class="far fa-envelope"></i> Barua pepe</th>
                                 <th id="th-5"><i class="fas fa-phone-alt"></i> Namba ya simu</th>
-                                <th id="th-8"><i class="far fa-file-alt"></i> Kiambatanishi</th>
+                                <th id="th-8"><i class="far fa-file-alt"></i> Kiambatisho</th>
                                 <th id="th-9"><i class="far fa-comment-dots"></i> Maoni</th>
                                 <th id="th-10"><i class="far fa-calendar-check"></i> Tarehe ya taarifa</th>
                             </tr>';

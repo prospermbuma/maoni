@@ -96,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="field file">
-                                <h4>Kiambatanishi:</h4>
+                                <h4>Kiambatisho:</h4>
                                 <div class="input-area">
                                     <input type="file" name="attach" id="attach">
                                     <i class="icon fas fa-file-alt"></i>

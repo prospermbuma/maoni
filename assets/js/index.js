@@ -49,8 +49,8 @@ form.onsubmit = (e) => {
 
                     setTimeout(() => {
                         window.location.href = 'index.php';
-                    }, 300);
-                }, 100);
+                    }, 300000);
+                }, 100000);
             }
 
             checkInputs(); // Validate inputs
