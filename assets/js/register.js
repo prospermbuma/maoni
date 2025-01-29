@@ -19,7 +19,7 @@ register_form.onsubmit = (e) => {
     const xhr_2 = new XMLHttpRequest();
 
     // Open connection
-    xhr_2.open('POST', '/pages/process_register.php', true);
+    xhr_2.open('POST', '../pages/process_register.php', true);
 
     // Execution of the ajax call
     // xhr.onload = function () {

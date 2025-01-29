@@ -15,7 +15,7 @@ form.onsubmit = (e) => {
     const xhr = new XMLHttpRequest();
 
     // Open connection
-    xhr.open('POST', 'pages/process_login.php', true);
+    xhr.open('POST', '../pages/process_login.php', true);
 
     xhr.onreadystatechange = function () {
         console.log('Ready State: ', xhr.readyState);

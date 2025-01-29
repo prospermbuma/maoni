@@ -13,7 +13,6 @@ if (!$conn) {
     die("Failed to connect to " . DB . " " . mysqli_connect_error());
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = filter_input(INPUT_POST, strtolower('username'), FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -23,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result)) {
-        $_SESSION['username'] = ucfirst($username);
+        $_SESSION['username'] = ucfirst(strtolower($username));
         header('Location: view_data.php');
     } else {
         echo "Incorrect Credentials";

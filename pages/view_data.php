@@ -38,6 +38,7 @@ if (!isset($_SESSION['username'])) {
             <i class="fas fa-bars"></i>
         </label>
         <input type="checkbox" name="check" id="check">
+        <!-- === Small Screen Display === -->
         <ul class="navbar-nav">
             <li class="nav-item flex-space-between">
                 <p>Welcome <?php echo $_SESSION['username']; ?></p>
@@ -45,9 +46,10 @@ if (!isset($_SESSION['username'])) {
             <li class="nav-item"><a href="change_password.php" class="nav-link"><i class="fas fa-lock"></i> Change password</li>
             <li class="nav-item"><a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i> Signout</a></li>
         </ul>
+        <!-- === Big Screen Display === -->
         <div class="nav-right-content">
             <div class="flex-space-between">
-                <p>Welcome, <?php echo $_SESSION['username']; ?></p><i class="far fa-smile"></i>
+                <p>Welcome, <?php echo $_SESSION['username']; ?></p>
             </div>
             <a href="change_password.php"><i class="fas fa-lock"></i> Change password</a>
             <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Signout</a>
