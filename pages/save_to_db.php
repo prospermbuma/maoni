@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
         // Allowed file extensions
-        $allowed_ext = ['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx'];
+        $allowed_ext = ['pdf', 'doc', 'docx'];
 
         // Check file extension and size
         if (in_array($file_ext, $allowed_ext) && $file_size <= 5 * 1024 * 1024) { // Limit size to 5MB
@@ -53,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($phone) && !empty($comments)) {
         // Check if the email is not taken
-        $sql = "SELECT id FROM student WHERE email = '$email' AND phone = '$phone'";
+        $sql = "SELECT id FROM maoni WHERE email = '$email'";
         $select_result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($select_result) === 0) {
             // Insert into the database
-            $q = "INSERT INTO student(firstname, lastname, email, phone, attachment, comments, saved_date) VALUES('$first_name', '$last_name', '$email', '$phone', '$attachment', '$comments', NOW())";
+            $q = "INSERT INTO maoni(firstname, lastname, email, phone, attachment, comments, saved_date) VALUES('$first_name', '$last_name', '$email', '$phone', '$attachment', '$comments', NOW())";
             $insert_result = mysqli_query($conn, $q);
 
             if ($insert_result) {
