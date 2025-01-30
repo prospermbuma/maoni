@@ -58,11 +58,11 @@ if (isset($_GET['delete_id'])) {
         </label>
         <input type="checkbox" name="check" id="check">
         <!-- === Small Screen Display === -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav-mobile">
             <li class="nav-item flex-space-between">
                 <p>Welcome <?php echo $_SESSION['username']; ?></p>
             </li>
-            <li class="nav-item"><a href="change_password.php" class="nav-link"><i class="fas fa-lock"></i> Change password</li>
+            <li class="nav-item"><a href="change_password.php" class="nav-link"><i class="fas fa-lock"></i> Change password</a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i> Signout</a></li>
         </ul>
         <!-- === Big Screen Display === -->

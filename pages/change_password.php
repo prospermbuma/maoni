@@ -1,8 +1,8 @@
-<?php 
-    session_start();
-    if (!isset($_SESSION['username'])) {
-        header('Location: login.php');
-    }
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
     <div id="change_password">
         <div class="message"></div>
         <h2 class="head-text">Change password</h2>
-        <form action="process_change_password.php" method="POST">
+        <form method="POST">
             <div class="input-group">
                 <div class="password-group-0">
                     <input type="password" name="pswd_0" id="pswd_0" placeholder="Current Password">
@@ -58,6 +58,16 @@
         </div>
     </div>
     <!-- End Form Wrapper -->
+
+    <!-- 
+    
+    <b>Fatal error</b>: Uncaught mysqli_sql_exception: Table 'school.school_manager' doesn't exist in C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php:20
+Stack trace:
+#0 C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php(20): mysqli_query(Object(mysqli), 'SELECT user_id ...')
+#1 {main}
+thrown in <b>C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php</b> on line <b>20</b><br />
+    
+    -->
 
 
     <!-- === Scripts === -->

@@ -41,7 +41,7 @@ form.onsubmit = (e) => {
     const xhr = new XMLHttpRequest();
 
     // Open connection
-    xhr.open('POST', './process_change_password.php', true);
+    xhr.open('POST', '../pages/process_change_password.php', true);
 
     // Execution of the ajax call
     // xhr.onload = function () {
@@ -56,38 +56,38 @@ form.onsubmit = (e) => {
     //     }
     // }
 
-    xhr.onreadystatechange = function() {
-            // Ready State
-            // 0 = Unsent
-            // 1 = Opened
-            // 2 = Received
-            // 3 = Loading
-            // 4 = Done
-            console.log('Ready State: ', xhr.readyState);
-            if (this.status === 200 && this.readyState === 4) {
-                let response = xhr.response;
-                if (response.indexOf("Incorrect current password") != -1 || response.indexOf("Fields cannot be blank") != -1 || response.indexOf("Password mismatch") != -1 || response.indexOf("Password has already been used") != -1 | response.indexOf("Not saved ") != -1) {
-                    message.classList.add('form-warning-animated');
-                    message.classList.remove('form-success-animated');
-                    message.innerText = response;
-                } else {
-                    /* === Show and hide success message  === */
-                    message.classList.remove('form-warning-animated');
-                    message.classList.add('form-success-animated');
-                    message.innerText = response;
-                    /* === Clear inputs  === */
-                    fname = "";
-                    lname = "";
-                    uname = "";
-                    email = "";
-                    pswd_1 = "";
-                    pswd_2 = "";
-                }
-                /* === Calling the check inputs function  === */
+    xhr.onreadystatechange = function () {
+        // Ready State
+        // 0 = Unsent
+        // 1 = Opened
+        // 2 = Received
+        // 3 = Loading
+        // 4 = Done
+        console.log('Ready State: ', xhr.readyState);
+        if (this.status === 200 && this.readyState === 4) {
+            let response = xhr.response;
+            if (response.indexOf("Incorrect current password") != -1 || response.indexOf("Fields cannot be blank") != -1 || response.indexOf("Password mismatch") != -1 || response.indexOf("Password has already been used") != -1 || response.indexOf("Not saved ") != -1 || response.indexOf("Fatal error ") != -1) {
+                message.classList.add('form-warning-animated');
+                message.classList.remove('form-success-animated');
+                message.innerText = response;
+            } else {
+                /* === Show and hide success message  === */
+                message.classList.remove('form-warning-animated');
+                message.classList.add('form-success-animated');
+                message.innerText = response;
+                /* === Clear inputs  === */
+                fname = "";
+                lname = "";
+                uname = "";
+                email = "";
+                pswd_1 = "";
+                pswd_2 = "";
             }
+            /* === Calling the check inputs function  === */
         }
-        /* === Calling the check inputs function  === */
-        // Creating new formData object. This object is used to send form data.
+    }
+    /* === Calling the check inputs function  === */
+    // Creating new formData object. This object is used to send form data.
     let formData = new FormData(form);
 
     // Send the request (form data)
@@ -104,7 +104,7 @@ const pass_1 = document.querySelector('#pswd_1');
 const pass_2 = document.querySelector('#pswd_2');
 
 const pswd_eye_0 = document.querySelector('.password-group-0 .fa-eye');
-pswd_eye_0.addEventListener('click', function() {
+pswd_eye_0.addEventListener('click', function () {
     pswd_eye_0.classList.add('hide');
     pswd_eye_slash_0.classList.add('show');
     if (pass_0.getAttribute("type") === "password") {
@@ -113,7 +113,7 @@ pswd_eye_0.addEventListener('click', function() {
 })
 
 const pswd_eye_slash_0 = document.querySelector('.password-group-0 .fa-eye-slash');
-pswd_eye_slash_0.addEventListener('click', function() {
+pswd_eye_slash_0.addEventListener('click', function () {
     pswd_eye_slash_0.classList.remove('show');
     pswd_eye_0.classList.remove('hide');
     if (pass_0.getAttribute("type") === "text") {
@@ -122,7 +122,7 @@ pswd_eye_slash_0.addEventListener('click', function() {
 })
 
 const pswd_eye_1 = document.querySelector('.password-group-1 .fa-eye');
-pswd_eye_1.addEventListener('click', function() {
+pswd_eye_1.addEventListener('click', function () {
     pswd_eye_1.classList.add('hide');
     pswd_eye_slash_1.classList.add('show');
     if (pass_1.getAttribute("type") === "password") {
@@ -131,7 +131,7 @@ pswd_eye_1.addEventListener('click', function() {
 })
 
 const pswd_eye_slash_1 = document.querySelector('.password-group-1 .fa-eye-slash');
-pswd_eye_slash_1.addEventListener('click', function() {
+pswd_eye_slash_1.addEventListener('click', function () {
     pswd_eye_slash_1.classList.remove('show');
     pswd_eye_1.classList.remove('hide');
     if (pass_1.getAttribute("type") === "text") {
@@ -140,7 +140,7 @@ pswd_eye_slash_1.addEventListener('click', function() {
 })
 
 const pswd_eye_2 = document.querySelector('.password-group-2 .fa-eye');
-pswd_eye_2.addEventListener('click', function() {
+pswd_eye_2.addEventListener('click', function () {
     pswd_eye_2.classList.add('hide');
     pswd_eye_slash_2.classList.add('show');
     if (pass_2.getAttribute("type") === "password") {
@@ -149,7 +149,7 @@ pswd_eye_2.addEventListener('click', function() {
 })
 
 const pswd_eye_slash_2 = document.querySelector('.password-group-2 .fa-eye-slash');
-pswd_eye_slash_2.addEventListener('click', function() {
+pswd_eye_slash_2.addEventListener('click', function () {
     pswd_eye_slash_2.classList.remove('show');
     pswd_eye_2.classList.remove('hide');
     if (pass_2.getAttribute("type") === "text") {
