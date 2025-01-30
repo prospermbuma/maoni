@@ -2,30 +2,6 @@
 # General
 =====================================================*/
 
-@keyframes LED {
-    0% {
-        color: rgba(7, 103, 213, 0.7);
-    }
-    25% {
-        color: rgba(213, 12, 216, 0.7);
-    }
-    50% {
-        color: rgba(4, 134, 134, 0.7);
-    }
-    75% {
-        color: rgba(234, 13, 138, 0.83);
-    }
-    10% {
-        color: rgba(7, 103, 213, 0.7);
-    }
-}
-
-.fa-smile {
-    font-size: 20px;
-    color: rgba(7, 103, 213, 0.7);
-    animation: LED 20s infinite forwards ease-in-out;
-}
-
 .flex-space-between {
     display: flex;
     justify-content: space-between;
@@ -38,33 +14,33 @@
 # Navigation
 =====================================================*/
 
-.navbar .nav-right-content {
+.navbar.viewData .nav-right-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
 
-.navbar .nav-right-content a {
+.navbar.viewData .nav-right-content a {
     text-decoration: none;
     color: #575252;
     transition: all .3s;
 }
 
-.navbar .nav-right-content a:hover {
+.navbar.viewData .nav-right-content a:hover {
     color: #000;
 }
 
-.navbar #checkbtn {
+.navbar.viewData #checkbtn {
     display: none;
     cursor: pointer;
 }
 
-.navbar #checkbtn:hover {
+.navbar.viewData #checkbtn:hover {
     cursor: pointer;
 }
 
-.navbar #checkbtn .fa-bars {
+.navbar.viewData #checkbtn .fa-bars {
     font-size: 22px;
     border: 1px solid #13256d;
     padding: 7px 12px;
@@ -72,7 +48,7 @@
     color: #13256d;
 }
 
-.navbar #check {
+.navbar.viewData #check {
     display: none;
 }
 
@@ -83,23 +59,27 @@
     .container.commento {
         padding: 0 120px;
     }
+
     .row {
         gap: 0.5rem;
     }
 }
 
 @media only screen and (max-width: 986px) {
-    .navbar {
+    .navbar.viewData {
         justify-content: space-between;
         gap: 0rem;
     }
-    .navbar .nav-right-content {
+
+    .navbar.viewData .nav-right-content {
         display: none;
     }
-    .navbar #checkbtn {
+
+    .navbar.viewData #checkbtn {
         display: block;
     }
-    .navbar .navbar-nav {
+
+    .navbar.viewData .navbar.viewData-nav {
         position: absolute;
         top: 100%;
         right: -100%;
@@ -116,7 +96,8 @@
         z-index: 1030;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     }
-    .navbar #check:checked~.navbar-nav {
+
+    .navbar.viewData #check:checked~.navbar.viewData-nav {
         right: 0;
     }
 }
@@ -136,6 +117,7 @@
 #view .table-container {
     width: 100%;
     overflow-x: auto;
+    scrollbar-width: none;
 }
 
 #view table {
@@ -163,7 +145,7 @@
 }
 
 #view table td {
-    padding: 10px 15px;
+    padding: 16px 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
     max-width: 100%;
@@ -219,6 +201,26 @@
     text-align: center;
 }
 
+#view .download_file {
+    text-decoration: none;
+    color: #fff;
+    background: #02982a;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#view .delete-btn {
+    text-decoration: none;
+    color: #c10808;
+}
+
+#view .records-total span {
+    color: #fff;
+    background: #025298;
+    border-radius: 30px;
+    padding: 5px 10px;
+    font-weight: bold;
+}
 
 /* === Media Query === */
 
@@ -232,6 +234,7 @@
     .container {
         padding: 0 30px;
     }
+
     .para {
         text-align: center;
         padding: 0 40px;
@@ -242,6 +245,7 @@
     .container {
         padding: 0 20px;
     }
+
     #view .prev-next-btns .btn {
         padding: 9px 24px;
         font-size: 12px;

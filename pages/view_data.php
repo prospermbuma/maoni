@@ -47,7 +47,7 @@ if (isset($_GET['delete_id'])) {
 
 <body>
     <!-- == Navigation == -->
-    <nav class="navbar">
+    <nav class="navbar viewData">
         <a href="#" class="nav-brand">
             <div class="nav-brand-logo">
                 <img src="../assets/img/ifm_logo_2.png" alt="" class="nav-logo"><span>IFM MAONI</span>
@@ -117,8 +117,7 @@ if (isset($_GET['delete_id'])) {
                             $start = 0;
                         }
 
-                        $q = "SELECT firstname, lastname, email, phone, attachment, comments, DATE_FORMAT(saved_date, '%M %D, %Y')
-    AS saved_date, id FROM maoni ORDER BY id ASC LIMIT $start, $pagerows";
+                        $q = "SELECT firstname, lastname, email, phone, attachment, comments, saved_date, id FROM maoni ORDER BY id ASC LIMIT $start, $pagerows";
                         $result = @mysqli_query($conn, $q); // Run the query
                         $records = mysqli_num_rows($result);
                         if ($result) { // If it ran without a problem, display the records
@@ -145,7 +144,7 @@ if (isset($_GET['delete_id'])) {
                              <td>' . $row['phone'] . '</td>
                              <td>';
                                 if (!empty($row['attachment'])) {
-                                    echo '<a href="../uploads/' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '" download="' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '">Download PDF</a>';
+                                    echo '<a class="download_file" href="../uploads/' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '" download="' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '">Download PDF</a>';
                                 } else {
                                     echo 'No attachment';
                                 }
@@ -153,7 +152,7 @@ if (isset($_GET['delete_id'])) {
                              <td>' . $row['comments'] . '</td>
                             <td>' . $row['saved_date'] . '</td>
                             <td>
-                                <a href="view_data.php?delete_id=' . $row['id'] . '" class="delete-btn" onclick="return confirmDelete()"><i class="fas fa-trash-alt"></i> Futa</a>
+                                <a href="view_data.php?delete_id=' . $row['id'] . '" class="delete-btn" onclick="return confirmDelete()"><i class="fas fa-trash-alt"></i></a>
                             </td>
                             </tr>    
                              ';
@@ -166,34 +165,34 @@ if (isset($_GET['delete_id'])) {
                             // Debugging message
                             echo '<p style="text-align:center;">' . mysqli_error($conn) . '<br><br />Query: ' . $q . '</p>';
                         }
-
-                        //Now display the figure for the total number of records
-                        $q = "SELECT COUNT(id) FROM maoni";
-                        $result = @mysqli_query($conn, $q);
-                        $row = @mysqli_fetch_array($result, MYSQLI_NUM);
-                        $records = $row[0];
-                        mysqli_close($conn);
-                        echo "<p class='records-total'>Jumla ya maoni na taarifa: $records</p>";
-                        if ($pages > 1) {
-                            echo '<div class="prev-next-btns">';
-                            $current_page = ($start / $pagerows) + 1;
-                            //If the page is not the first page then create a Previous link
-                            if ($current_page != 1) {
-                                echo '<a href="view_data.php?s=' . ($start - $pagerows) .
-                                    '&p=' . $pages . '" class="btn btn-prev"><i class="fas fa-arrow-circle-left"></i> Iliyopita</a>
-                                ';
-                            }
-                            //Create a Next link 
-                            if ($current_page != $pages) {
-                                echo '<a href="view_data.php?s=' . ($start + $pagerows) .
-                                    '&p=' . $pages . '" class="btn btn-next">Inayofuata <i class="fas fa-arrow-circle-right"></i></a>';
-                            }
-                            echo '</div>';
-                        }
-
                         ?>
                     </div>
                 </div>
+                <?php
+                //Now display the figure for the total number of records
+                $q = "SELECT COUNT(id) FROM maoni";
+                $result = @mysqli_query($conn, $q);
+                $row = @mysqli_fetch_array($result, MYSQLI_NUM);
+                $records = $row[0];
+                mysqli_close($conn);
+                echo "<p class='records-total'>Jumla ya maoni na taarifa: <span>$records</span> </p>";
+                if ($pages > 1) {
+                    echo '<div class="prev-next-btns">';
+                    $current_page = ($start / $pagerows) + 1;
+                    //If the page is not the first page then create a Previous link
+                    if ($current_page != 1) {
+                        echo '<a href="view_data.php?s=' . ($start - $pagerows) .
+                            '&p=' . $pages . '" class="btn btn-prev"><i class="fas fa-arrow-circle-left"></i> Iliyopita</a>
+                                 ';
+                    }
+                    //Create a Next link 
+                    if ($current_page != $pages) {
+                        echo '<a href="view_data.php?s=' . ($start + $pagerows) .
+                            '&p=' . $pages . '" class="btn btn-next">Inayofuata <i class="fas fa-arrow-circle-right"></i></a>';
+                    }
+                    echo '</div>';
+                }
+                ?>
                 <div class="text">
                     <p class="para">&copy; <span id="year"></span> The Institute of Finance Management (IFM)</p>
                 </div>
