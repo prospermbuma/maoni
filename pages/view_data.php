@@ -3,6 +3,25 @@ session_start();
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
 }
+
+// Handle record deletion
+if (isset($_GET['delete_id'])) {
+    $delete_id = $_GET['delete_id'];
+
+    // Require connection
+    require_once('../assets/required/connection.php');
+
+    // Delete the record from the database
+    $delete_query = "DELETE FROM maoni WHERE id = $delete_id";
+    if (mysqli_query($conn, $delete_query)) {
+        echo "<script>alert('Rekodi imefutwa kwa mafanikio.'); window.location.href='view_data.php';</script>";
+    } else {
+        echo "<script>alert('Kuna hitilafu katika kufuta rekodi.'); window.location.href='view_data.php';</script>";
+    }
+
+    // Close the connection
+    mysqli_close($conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -114,6 +133,7 @@ if (!isset($_SESSION['username'])) {
                                 <th id="th-8"><i class="far fa-file-alt"></i> Kiambatisho</th>
                                 <th id="th-9"><i class="far fa-comment-dots"></i> Maoni</th>
                                 <th id="th-10"><i class="far fa-calendar-check"></i> Tarehe ya taarifa</th>
+                                <th id="th-11"><i class="fas fa-trash-alt"></i> Futa</th>
                             </tr>';
                             // Fetch and print all the records 
                             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // The code loops through the users table’s data until all the data has been displayed.
@@ -125,13 +145,16 @@ if (!isset($_SESSION['username'])) {
                              <td>' . $row['phone'] . '</td>
                              <td>';
                                 if (!empty($row['attachment'])) {
-                                    echo '<a href="uploads/' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '" download>' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '</a>';
+                                    echo '<a href="../uploads/' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '" download="' . htmlspecialchars($row['attachment'], ENT_QUOTES, 'UTF-8') . '">Download PDF</a>';
                                 } else {
                                     echo 'No attachment';
                                 }
                                 echo '</td>
                              <td>' . $row['comments'] . '</td>
                             <td>' . $row['saved_date'] . '</td>
+                            <td>
+                                <a href="view_data.php?delete_id=' . $row['id'] . '" class="delete-btn" onclick="return confirmDelete()"><i class="fas fa-trash-alt"></i> Futa</a>
+                            </td>
                             </tr>    
                              ';
                             }
@@ -185,6 +208,11 @@ if (!isset($_SESSION['username'])) {
     <script src="../assets/js/main.js"></script>
     <!-- == View JS == -->
     <script src="../assets/js/view_data.js"></script>
+    <script>
+        function confirmDelete() {
+            return confirm("Je, una uhakika unataka kufuta rekodi hii?");
+        }
+    </script>
 </body>
 
 </html>

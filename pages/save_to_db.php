@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
         // Allowed file extensions
-        $allowed_ext = ['pdf', 'doc', 'docx'];
+        $allowed_ext = ['pdf'];
 
         // Check file extension and size
         if (in_array($file_ext, $allowed_ext) && $file_size <= 5 * 1024 * 1024) { // Limit size to 5MB

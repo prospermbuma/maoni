@@ -28,7 +28,7 @@ form.onsubmit = (e) => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let response = xhr.responseText;
 
-            if (response.includes("Tafadhali jaza taarifa zote") || response.includes("Barua pepe au namba ya simu imeshatumika") || response.includes("Fatal error")) {
+            if (response.includes("Tafadhali jaza taarifa zote") || response.includes("Barua pepe au namba ya simu imeshatumika") || response.includes("Fatal error") || response.includes("Invalid file type or size exceeded (5MB limit).") || response.includes("Failed to upload file.")) {
                 console.log(response);
                 message.innerText = response;
                 message.classList.add('form-warning-animated');
