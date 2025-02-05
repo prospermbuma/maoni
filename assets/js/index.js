@@ -72,14 +72,14 @@ form.onsubmit = (e) => {
 
         // Validate file input before sending
         const file = file_Input.files[0];
-        const allowedExtensions = ['pdf', 'doc', 'docx'];
+        const allowedExtensions = ['pdf'];
         const maxFileSize = 5 * 1024 * 1024; // 5MB
 
         if (file) {
             const fileExtension = file.name.split('.').pop().toLowerCase();
 
             if (!allowedExtensions.includes(fileExtension)) {
-                message.innerText = "Invalid file type. Allowed: pdf, doc, docx.";
+                message.innerText = "Invalid file type. Allowed: pdf.";
                 message.classList.add('form-warning-animated');
                 return;
             }

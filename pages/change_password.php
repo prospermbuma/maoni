@@ -59,17 +59,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <!-- End Form Wrapper -->
 
-    <!-- 
-    
-    <b>Fatal error</b>: Uncaught mysqli_sql_exception: Table 'school.school_manager' doesn't exist in C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php:20
-Stack trace:
-#0 C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php(20): mysqli_query(Object(mysqli), 'SELECT user_id ...')
-#1 {main}
-thrown in <b>C:\xampp\htdocs\maoni.ifm.ac.tz\pages\process_change_password.php</b> on line <b>20</b><br />
-    
-    -->
-
-
     <!-- === Scripts === -->
     <script src="../assets/js/change_password.js"></script>
 </body>

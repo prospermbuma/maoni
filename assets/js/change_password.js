@@ -70,7 +70,7 @@ form.onsubmit = (e) => {
                 message.classList.add('form-warning-animated');
                 message.classList.remove('form-success-animated');
                 message.innerText = response;
-            } else {
+            } else {    
                 /* === Show and hide success message  === */
                 message.classList.remove('form-warning-animated');
                 message.classList.add('form-success-animated');
